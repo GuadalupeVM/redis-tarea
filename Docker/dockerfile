@@ -1,2 +1,17 @@
+#Descargar ubuntu 18.04
 FROM ubuntu:bionic
 
+#Label about the custom image
+LABEL maintainer="Correr"
+LABEL version="0.1"
+LABEL description="Imagen hola mundo con python3 y web.py"
+
+#install packages
+RUN apt-get update
+RUN apt-get install -y python3
+RUN apt-get install -y python3-pip
+RUN pip3 install web.py
+
+EXPOSE 8080
+
+#docker builb -t image:v1 .
